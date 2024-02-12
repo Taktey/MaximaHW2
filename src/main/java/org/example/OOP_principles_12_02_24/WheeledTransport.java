@@ -7,7 +7,7 @@ public class WheeledTransport {
     public WheeledTransport() {
     }
 
-    public void service(){
+    public void service() {
         System.out.println("Обслужено колёс - " + wheelCount);
     }
 

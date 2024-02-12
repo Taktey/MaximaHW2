@@ -1,6 +1,6 @@
 package org.example.OOP_principles_12_02_24;
 
-public class Car extends MotorTransport{
+public class Car extends MotorTransport {
     private String brand;
     private String model;
 
@@ -11,9 +11,9 @@ public class Car extends MotorTransport{
     }
 
     @Override
-    public void service(){
+    public void service() {
         super.service();
-        System.out.println("Обслужен автомобиль, марка: "+brand+" модель: "+model);
+        System.out.println("Обслужен автомобиль, марка: " + brand + " модель: " + model);
     }
 
     public void setBrand(String brand) {

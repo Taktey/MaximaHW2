@@ -1,12 +1,12 @@
 package org.example.OOP_principles_12_02_24;
 
-public class Truck extends MotorTransport{
+public class Truck extends MotorTransport {
     private int cargoLimit;
 
     @Override
-    public void service(){
+    public void service() {
         super.service();
-        System.out.println("Обслужен грузовик, вместимостью "+cargoLimit+" килограмм");
+        System.out.println("Обслужен грузовик, вместимостью " + cargoLimit + " килограмм");
     }
 
     public Truck(int wheelCount, double maxSpeed, String engineType, int cargoLimit) {

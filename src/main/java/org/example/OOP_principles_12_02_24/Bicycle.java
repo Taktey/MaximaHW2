@@ -1,6 +1,6 @@
 package org.example.OOP_principles_12_02_24;
 
-public class Bicycle extends WheeledTransport{
+public class Bicycle extends WheeledTransport {
     private String type;
 
     public Bicycle(String type) {
@@ -13,9 +13,9 @@ public class Bicycle extends WheeledTransport{
     }
 
     @Override
-    public void service(){
+    public void service() {
         super.service();
-        System.out.println("Обслужено навесное оборудование велосипеда типа "+ type);
+        System.out.println("Обслужено навесное оборудование велосипеда типа " + type);
     }
 
     public void setType(String type) {
