@@ -1,4 +1,4 @@
-package Transformations_16_02_24;
+package Abstraction_and_interfaces_20_02_24;
 
 public final class Truck extends MotorTransport {
     private int cargoLimit;
@@ -6,6 +6,11 @@ public final class Truck extends MotorTransport {
     @Override
     public void service() {
         super.service();
+        cargoTransportService();
+        useTruckKlaxon();
+    }
+
+    private void cargoTransportService() {
         System.out.println("Обслужен грузовик, вместимостью " + cargoLimit + " килограмм");
     }
 
@@ -13,7 +18,8 @@ public final class Truck extends MotorTransport {
         super(wheelCount, maxSpeed, engineType);
         this.cargoLimit = cargoLimit;
     }
-    public void useTruckKlaxon(){
+
+    private void useTruckKlaxon() {
         System.out.println("Choo-Choo");
     }
 

@@ -1,14 +1,10 @@
-package Transformations_16_02_24;
+package Abstraction_and_interfaces_20_02_24;
 
-public class WheeledTransport {
+public abstract class WheeledTransport implements Transport {
     private int wheelCount;
     private double maxSpeed;
 
     public WheeledTransport() {
-    }
-
-    public void service() {
-        System.out.println("Обслужено колёс - " + wheelCount);
     }
 
     public void setWheelCount(int wheelCount) {
@@ -30,5 +26,10 @@ public class WheeledTransport {
     public WheeledTransport(int wheelCount, double maxSpeed) {
         this.wheelCount = wheelCount;
         this.maxSpeed = maxSpeed;
+    }
+
+    @Override
+    public void service() {
+        System.out.println("Обслужено колёс - " + wheelCount);
     }
 }

@@ -1,4 +1,4 @@
-package Transformations_16_02_24;
+package Abstraction_and_interfaces_20_02_24;
 
 public final class Car extends MotorTransport {
     private String brand;
@@ -9,14 +9,20 @@ public final class Car extends MotorTransport {
         this.brand = brand;
         this.model = model;
     }
-    public void useCarKlaxon(){
+
+    private void useCarKlaxon() {
         System.out.println("beep-beep");
+    }
+
+    private void carService() {
+        System.out.println("Обслужен автомобиль, марка: " + brand + " модель: " + model);
     }
 
     @Override
     public void service() {
         super.service();
-        System.out.println("Обслужен автомобиль, марка: " + brand + " модель: " + model);
+        carService();
+        useCarKlaxon();
     }
 
     public void setBrand(String brand) {

@@ -1,4 +1,4 @@
-package Transformations_16_02_24;
+package Abstraction_and_interfaces_20_02_24;
 
 public final class Bicycle extends WheeledTransport {
     private String type;
@@ -11,13 +11,19 @@ public final class Bicycle extends WheeledTransport {
         super(wheelCount, maxSpeed);
         this.type = type;
     }
-    public void useBikeKlaxon(){
+
+    private void useBikeKlaxon() {
         System.out.println("Ring-Ring");
     }
 
     @Override
     public void service() {
         super.service();
+        attachmentsService();
+        useBikeKlaxon();
+    }
+
+    private void attachmentsService() {
         System.out.println("Обслужено навесное оборудование велосипеда типа " + type);
     }
 

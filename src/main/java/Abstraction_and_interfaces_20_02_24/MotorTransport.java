@@ -1,6 +1,6 @@
-package Transformations_16_02_24;
+package Abstraction_and_interfaces_20_02_24;
 
-public class MotorTransport extends WheeledTransport {
+public abstract class MotorTransport extends WheeledTransport {
     private String engineType;
 
     public MotorTransport(int wheelCount, double maxSpeed, String engineType) {
