@@ -28,8 +28,7 @@ public class HW_Part1 {
         int userInput = 0;
         while (isAdditionalInputRequires) {
             System.out.println("Введите целое число:");
-            Scanner sc = new Scanner(System.in);
-            try {
+            try(Scanner sc = new Scanner(System.in)) {
                 userInput = sc.nextInt();
                 isAdditionalInputRequires = false;
             } catch (InputMismatchException e) {
