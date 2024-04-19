@@ -2,29 +2,37 @@ package MultiThreading_22_03_24;
 
 public class Main {
     public static void main(String[] args) {
-        StringBuilder stringBuilder = new StringBuilder('a');
+        StringBuilder string = new StringBuilder("a");
 
-        MyThread thread1 = new MyThread(stringBuilder);
-        MyThread thread2 = new MyThread(stringBuilder);
-        MyThread thread3 = new MyThread(stringBuilder);
+        MyThread firstThread = new MyThread(string);
+        MyThread secondThread = new MyThread(string);
+        MyThread thirdThread = new MyThread(string);
+
+        firstThread.start();
+        secondThread.start();
+        thirdThread.start();
     }
-
 }
 
 class MyThread extends Thread {
-    private char value;
-    public MyThread(StringBuilder letter){
-        value = letter.charAt(0);
+
+    private StringBuilder string;
+
+    public MyThread(StringBuilder string) {
+        this.string = string;
     }
 
     @Override
     public void run() {
-        for (int i = 0; i < 100; i++) {
-            System.out.println(value);
+        synchronized (string) {
+            for (int i = 0; i < 100; i++) {
+                System.out.println("sout from Thread: " + string);
+            }
+            string.setCharAt(0, (char) (string.charAt(0) + 1));
         }
-        value= (char)((int)value+1);
     }
 }
+
 
 
 /*
