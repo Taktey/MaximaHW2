@@ -1,5 +1,7 @@
 package MultiThreading_22_03_24;
 
+import lombok.extern.slf4j.Slf4j;
+
 public class Main {
     public static void main(String[] args) {
         StringBuilder string = new StringBuilder("a");
@@ -14,6 +16,7 @@ public class Main {
     }
 }
 
+@Slf4j
 class MyThread extends Thread {
 
     private StringBuilder string;
@@ -26,7 +29,7 @@ class MyThread extends Thread {
     public void run() {
         synchronized (string) {
             for (int i = 0; i < 100; i++) {
-                System.out.println("sout from Thread: " + string);
+                log.info("sout from Thread: " + string);
             }
             string.setCharAt(0, (char) (string.charAt(0) + 1));
         }

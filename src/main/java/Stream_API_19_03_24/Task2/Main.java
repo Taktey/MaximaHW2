@@ -1,7 +1,10 @@
 package Stream_API_19_03_24.Task2;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.List;
 
+@Slf4j
 public class Main {
     public static void main(String[] args) {
         List<Book> list = List.of(
@@ -15,7 +18,7 @@ public class Main {
                 .filter(book -> book.getYear() > 2000)
                 .map(Book::getName)
                 .toList();
-        System.out.println("Задание 2\n" + newList);
+        log.info("Задание 2\n" + newList);
 
     }
 }
